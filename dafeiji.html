@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/dafeiji.css" />
+		
+		
+		<script type="text/javascript" src="js/common.js" ></script>
+		<script type="text/javascript" src="js/Bullet.js" ></script>
+		<script type="text/javascript" src="js/MyPlane.js" ></script>
+		<script type="text/javascript" src="js/Enemy.js" ></script>
+		<script type="text/javascript" src="js/GameEngine.js" ></script>
+		<script type="text/javascript">
+			onload = function(){
+				var oList = document.getElementById("list");
+				var aLi   = oList.getElementsByTagName("li");
+				for(var i=0;i<aLi.length;i++){
+					//点击事件
+					aLi[i].onclick = function(){
+						//清除ul
+						oList.parentNode.removeChild(oList);
+						
+						//开始游戏！（封装一个游戏引擎）
+						gameEngine.init().start();
+					}
+				}
+				
+			}
+		</script>
+	</head>
+	<body>
+		<div id="body_main" class="main">
+			<ul id="list">
+				<li value="1000">超级困难</li>
+				<li value="500">非常困难</li>
+				<li value="150">比较困难</li>
+				<li value="50">春哥附体</li>
+			</ul>
+		</div>
+	</body>
+</html>
